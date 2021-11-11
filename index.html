@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock, Paper, Scissors</title>
+  <link rel="stylesheet" href="./styles.css">
+  <!-- add link if importing font -->
+  <!-- check if I need a meta tag here  -->
+</head>
+<body>
+  <section>
+    <div>
+      <div></div>
+      <h1>Human</h1>
+      <p>Wins</p>
+    </div>
+  </section>
+  <main>
+    <section>
+      <title>Rock, Paper, Scissors</title>
+      <h1>Choose your game!</h1>
+    </section>
+    <section>
+      <div>
+        <h1>CLASSIC</h1>
+        <p>rock > scissors<br>paper > rock<br>scissors > paper</p>
+      </div>
+      <div>
+        <h1>DIFFICULT</h1>
+        <p>
+          rock > scissors & alien<br>
+          paper > rock & rock-on<br>
+          scissors > paper & alien<br>
+          alien > paper & rock-on<br>
+          rock-on > scissors & rock
+        </p>
+      </div>
+      <div class="hidden">
+        <img src="assets/cave.png" alt="rock">
+        <img src="assets/lines-paper.png" alt="paper">
+        <img src="assets/lines-scissors.png" alt="scissors">
+      </div>
+      <div class="hidden">
+        <img src="assets/lines-alien.png" alt="alien">
+        <img src="assets/rock-hand.png" alt="rock-on">
+      </div>
+      <button>CHANGE GAME?</button>
+    </section>
+  </main>
+  <section>
+    <div></div>
+    <h1>Computer</h1>
+    <p>Wins:</p>
+  </section>
+  <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="player.js"></script>
+  <script type="text/javascript" src="game.js"></script>
+</body>
+</html>
