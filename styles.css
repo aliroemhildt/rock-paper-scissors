@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.image {
+  height: 250px;
+  width: 250px;
+}
+
+html {
+  border: blue dashed;
+  max-height: 100%;
+  width: 100%;
+}
