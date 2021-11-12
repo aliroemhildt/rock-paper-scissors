@@ -17,13 +17,9 @@ class Player {
     this.wins = unstringifiedWins;
   };
 
-  takeTurn(array of choices, game object ?) {
-    if (this.name === 'Computer') {
-      var randomSelection = Math.floor(Math.random() * choices.length);
-      this.selection = choices[randomSelection];
-    } else if (this.name === 'Human') {
-      this.slection = // do I need to access a query selector/something from main to see what the person clicked?
-    }
+  takeTurn(choices) {
+    var randomSelection = Math.floor(Math.random() * choices.length);
+    return choices[randomSelection];
   };
 
 };
