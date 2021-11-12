@@ -3,7 +3,7 @@ class Player {
     this.name = name;
     this.token = token;
     this.wins = 0;
-    this.selection = ''; // not sure if i need this, might store which button is selected
+    this.selection = '';
   };
 
   saveWinsToStorage() {

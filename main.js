@@ -16,4 +16,4 @@ var difficultGame = new Game(human, computer, difficult);
 
 difficultGame.playRound(difficultGame.gameType.choices, 'rock-on');
 difficultGame.chooseWinnerDifficult(difficultGame.human, difficultGame.computer);
-console.log('Human: ', difficultGame.human.selection, ', Computer: ', difficultGame.computer.selection, ', Winner: ', difficultGame.winner);
+console.log(difficultGame.human.name, ': ', difficultGame.human.selection, '\n',difficultGame.computer.name, ': ',difficultGame.computer.selection, '\n', 'Winner : ', difficultGame.winner);
