@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rock, Paper, Scissors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
-  <!-- add link if importing font -->
-  <!-- check if I need a meta tag here  -->
+  <title>Rock, Paper, Scissors</title>
 </head>
-<body>
-  <section>
-    <div>
-      <div></div>
-      <h1>Human</h1>
-      <p>Wins</p>
-    </div>
+<body class="flex-row border yellow-border">
+  <section class="green-border side-section flex-column">
+    <h3 class="blue-border">🙂</h3>
+    <h4 class="blue-border">Name</h4>
+    <h5 class="blue-border">Wins: </h5>
   </section>
-  <main>
-    <section>
-      <title>Rock, Paper, Scissors</title>
-      <h1>Choose your game!</h1>
+  <main class="green-border">
+    <section class="header flex-column yellow-border">
+      <h1 class="pink-border">Rock, Paper, Scissors</h1>
+      <h2 class="pink-border">Choose your game!</h2>
     </section>
-    <section>
-      <div>
-        <h1>CLASSIC</h1>
+    <section class="game-area flex-column yellow-border">
+      <button class="pink-border game-button">
+        <h2>CLASSIC</h2>
         <p>rock > scissors<br>paper > rock<br>scissors > paper</p>
-      </div>
-      <div>
-        <h1>DIFFICULT</h1>
+      </button>
+      <button class="pink-border game-button">
+        <h2>DIFFICULT</h2>
         <p>
           rock > scissors & alien<br>
           paper > rock & rock-on<br>
@@ -33,23 +32,29 @@
           alien > paper & rock-on<br>
           rock-on > scissors & rock
         </p>
-      </div>
-      <div class="hidden">
-        <img src="assets/cave.png" alt="rock">
-        <img src="assets/lines-paper.png" alt="paper">
-        <img src="assets/lines-scissors.png" alt="scissors">
-      </div>
-      <div class="hidden">
-        <img src="assets/lines-alien.png" alt="alien">
-        <img src="assets/rock-hand.png" alt="rock-on">
-      </div>
-      <button>CHANGE GAME?</button>
+      </button>
     </section>
+    <section class="game-area hidden-space yellow-border">
+      <div class="">
+        <img class="image" src="assets/cave.png" alt="rock">
+        <img class="image" src="assets/lines-paper.png" alt="paper">
+        <img class="image" src="assets/lines-scissors.png" alt="scissors">
+      </div>
+      <div class="">
+        <img class="image" src="assets/lines-alien.png" alt="alien">
+        <img class="image" src="assets/rock-hand.png" alt="rock-on">
+      </div>
+    </section>
+    <div class="button-div yellow-border">
+      <button class="change-game-button">
+        Change Game
+      </button>
+    </div>
   </main>
-  <section>
-    <div></div>
-    <h1>Computer</h1>
-    <p>Wins:</p>
+  <section class = "green-border side-section flex-column">
+    <h3 class="blue-border">🤖</h3>
+    <h4 class="blue-border">Computer</h4>
+    <h5 class="blue-border">Wins:</h5>
   </section>
   <script type="text/javascript" src="player.js"></script>
   <script type="text/javascript" src="game.js"></script>
