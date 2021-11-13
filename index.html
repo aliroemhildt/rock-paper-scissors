@@ -7,23 +7,23 @@
   <link rel="stylesheet" href="./styles.css">
   <title>Rock, Paper, Scissors</title>
 </head>
-<body class="flex-row border yellow-border">
-  <section class="green-border side-section flex-column">
-    <h3 class="blue-border">🙂</h3>
-    <h4 class="blue-border">Name</h4>
-    <h5 class="blue-border">Wins: </h5>
+<body class="flex-row">
+  <section class="side-section flex-column">
+    <h3>Token</h3>
+    <h4>Name</h4>
+    <h5>Wins:</h5>
   </section>
-  <main class="green-border">
-    <section class="header flex-column yellow-border">
-      <h1 class="pink-border">Rock, Paper, Scissors</h1>
-      <h2 class="pink-border">Choose your game!</h2>
+  <main>
+    <section class="header flex-column">
+      <h1>Rock, Paper, Scissors</h1>
+      <h2>Choose your game!</h2>
     </section>
-    <section class="game-area flex-column yellow-border">
-      <button class="pink-border game-button">
+    <section class="game-area hidden-space flex-column">
+      <button class="game-button">
         <h2>CLASSIC</h2>
         <p>rock > scissors<br>paper > rock<br>scissors > paper</p>
       </button>
-      <button class="pink-border game-button">
+      <button class="game-button">
         <h2>DIFFICULT</h2>
         <p>
           rock > scissors & alien<br>
@@ -34,27 +34,27 @@
         </p>
       </button>
     </section>
-    <section class="game-area hidden-space yellow-border">
-      <div class="">
+    <section class="game-area flex-column">
+      <div class="classic-icons">
         <img class="image" src="assets/cave.png" alt="rock">
         <img class="image" src="assets/lines-paper.png" alt="paper">
         <img class="image" src="assets/lines-scissors.png" alt="scissors">
       </div>
-      <div class="">
+      <div class="difficult-icons">
         <img class="image" src="assets/lines-alien.png" alt="alien">
         <img class="image" src="assets/rock-hand.png" alt="rock-on">
       </div>
     </section>
-    <div class="button-div yellow-border">
+    <div class="button-div">
       <button class="change-game-button">
         Change Game
       </button>
     </div>
   </main>
-  <section class = "green-border side-section flex-column">
-    <h3 class="blue-border">🤖</h3>
-    <h4 class="blue-border">Computer</h4>
-    <h5 class="blue-border">Wins:</h5>
+  <section class = "side-section flex-column">
+    <h3>Token</h3>
+    <h4>Name</h4>
+    <h5>Wins</h5>
   </section>
   <script type="text/javascript" src="player.js"></script>
   <script type="text/javascript" src="game.js"></script>
