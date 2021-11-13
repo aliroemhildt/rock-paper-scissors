@@ -1,5 +1,5 @@
-var Game = require('./game.js');
-var Player = require('./player.js');
+// var Game = require('./game.js');
+// var Player = require('./player.js');
 
 var human = new Player('Human', '🙂');
 var computer = new Player('Computer', '🤖');

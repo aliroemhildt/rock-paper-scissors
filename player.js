@@ -21,7 +21,6 @@ class Player {
     var randomSelection = Math.floor(Math.random() * choices.length);
     return choices[randomSelection];
   };
-
 };
 
-module.exports = Player;
+// module.exports = Player;

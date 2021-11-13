@@ -1,4 +1,4 @@
-var Player = require('./player.js');
+// var Player = require('./player.js');
 
 class Game {
   constructor(player1, player2, gameType) {
@@ -56,4 +56,4 @@ class Game {
   };
 };
 
-module.exports = Game;
+// module.exports = Game;
