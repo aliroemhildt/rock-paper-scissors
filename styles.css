@@ -55,7 +55,7 @@ h5 {
 }
 
 h6 {
-  font-size: 30px;
+  font-size: 50px;
 }
 
 .header {
@@ -74,9 +74,10 @@ h6 {
   position: relative;
 }
 
-.position-offset {
-  position: relative;
-  offset: center 
+.position-absolute {
+  position: absolute;
+  left:38%;
+  top: 80%;
 
 }
 
@@ -117,6 +118,7 @@ h6 {
   height: 200px;
   width: 200px;
   margin: 20px;
+  cursor: pointer;
 }
 
 .flex-row {

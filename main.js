@@ -23,7 +23,6 @@ var paper = document.querySelector('.paper-js');
 var scissors = document.querySelector('.scissors-js');
 var alien = document.querySelector('.alien-js');
 var rockOn = document.querySelector('.rock-on-js');
-var humanSelectionIcon = document.querySelectorAll('h6');
 
 rock.addEventListener('click', chooseIcon);
 paper.addEventListener('click', chooseIcon);
@@ -31,20 +30,18 @@ scissors.addEventListener('click', chooseIcon);
 alien.addEventListener('click', chooseIcon);
 rockOn.addEventListener('click', chooseIcon);
 window.addEventListener('load', displayPlayerInfo);
-// humanSelectionIcon.addEventListener('click', toggleIcon)
-
 
 function chooseIcon() {
   updateHumanSelection();
-  showHumanChoice();
+  showHumanSelection();
 };
 
 function updateHumanSelection() {
   if (event.target.classList.contains('rock-js')) {
     game.human.selection = 'rock';
   } else if (event.target.classList.contains('paper-js')) {
-    game.human.selectoin = 'paper';
-  } else if (event.target.classList.contains('scissor-js')) {
+    game.human.selection = 'paper';
+  } else if (event.target.classList.contains('scissors-js')) {
     game.human.selection = 'scissors';
   } else if (event.target.classList.contains('alien-js')) {
     game.human.selection = 'alien';
@@ -53,12 +50,25 @@ function updateHumanSelection() {
   };
 };
 
-function showHumanChoice() {
-  // event.target.append(`<p>${game.human.token}</p>`);
-  console.log(event.target.offsetTop, event.target.offsetLeft)
-  var humanIcon = document.createElement('div');
-  humanIcon.classList.add('position-offset');
-  humanIcon.innerText = `${game.human.token}`
+function showHumanSelection() {
+  // var humanIcon = document.createElement('DIV');
+  // humanIcon.classList.add('position-offset');
+  // humanIcon.innerText = `${game.human.token}`;
+  // event.target.parentElement.appendChild(humanIcon);
+  // console.log(event.target.parentElement)
+  // var humanIcons = document.getElementsByTagName('h6');
+  // console.log(humanIcons)
+  var selectedIcon = document.getElementsByClassName(`human-token ${game.human.selection}-js`);
+  selectedIcon[0].innerText = `${game.human.token}`;
+  toggle(selectedIcon[0])
+}
+
+function toggle(element) {
+  if (element.classList.contains('hidden-view')) {
+    element.classList.remove('hidden-view');
+  } else {
+    element.classList.add('hidden-view');
+  };
 }
 
 function displayPlayerInfo() {
@@ -83,7 +93,3 @@ function updatePlayer2Info() {
   player2Name.innerText = game.computer.name;
   player2Wins.innerText = `Wins: ${game.computer.wins}`;
 }
-
-// function toggleIcon() {
-//   event.target.append(`<h6>${game.human.token}</h6}`);
-// }
