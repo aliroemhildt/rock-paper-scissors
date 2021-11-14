@@ -29,6 +29,7 @@ paper.addEventListener('click', updatePlayerChoice);
 scissors.addEventListener('click', updatePlayerChoice);
 alien.addEventListener('click', updatePlayerChoice);
 rockOn.addEventListener('click', updatePlayerChoice);
+window.addEventListener('load', displayPlayerInfo);
 
 function updatePlayerChoice() {
   if (event.target.classList.contains('rock-js')) {
@@ -38,4 +39,27 @@ function updatePlayerChoice() {
   } else if (event.target.classList.contains('scissor-js')) {
     game.human.selection = 'scissors';
   };
+}
+
+function displayPlayerInfo() {
+    updatePlayer1Info();
+    updatePlayer2Info();
+};
+
+function updatePlayer1Info() {
+  player1Token = document.querySelector(".player1-token-js");
+  player1Name = document.querySelector(".player1-name-js");
+  player1Wins = document.querySelector(".player1-wins-js");
+  player1Token.innerText = game.human.token;
+  player1Name.innerText = game.human.name;
+  player1Wins.innerText = `Wins: ${game.human.wins}`;
+}
+
+function updatePlayer2Info() {
+  player2Token = document.querySelector('.player2-token-js');
+  player2Name = document.querySelector('.player2-name-js');
+  player2Wins = document.querySelector('.player2-wins-js');
+  player2Token.innerText = game.computer.token;
+  player2Name.innerText = game.computer.name;
+  player2Wins.innerText = `Wins: ${game.computer.wins}`;
 }

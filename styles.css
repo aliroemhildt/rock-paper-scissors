@@ -78,9 +78,7 @@ h5 {
 .change-game-button {
   font-family: 'Bungee', cursive;
   font-size: 30px;
-}
-
-.game-area {
+  margin-top: 10px;
 }
 
 .side-section {
@@ -95,6 +93,10 @@ h5 {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+}
+
+.game-area {
+  justify-content: center;
 }
 
 .image {
@@ -115,8 +117,4 @@ h5 {
 
 .hidden-space {
   display: none;
-}
-
-.classic-icons {
-  margin-top: 30px;
 }
