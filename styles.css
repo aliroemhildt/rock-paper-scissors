@@ -30,12 +30,13 @@ h1 {
   font-family: 'Bungee', cursive;
   font-size: 64px;
   color: white;
-  margin: 15px;
+  margin: 20px 0 0 0;
 }
 
 h2 {
   color: white;
   font-size: 28px;
+  margin: 20px;
 }
 
 h3 {
@@ -84,16 +85,28 @@ h6 {
 .game-button {
   margin: 20px;
   height: 200px;
-  width: 200px;
+  width: 300px;
   background-color: #AB49DA;
   border-radius: 10px;
   border-style: none;
+  cursor: pointer;
+}
+
+.game-button:hover {
+  background-color: #8039A3 ;
+}
+
+.rules {
+  /* margin: 10px; */
+  color: white;
+  font-size: 16px;
 }
 
 .change-game-button {
   font-family: 'Bungee', cursive;
   font-size: 30px;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 .side-section {
