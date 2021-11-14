@@ -54,6 +54,10 @@ h5 {
   margin-top: 30px;
 }
 
+h6 {
+  font-size: 50px;
+}
+
 .header {
   height: 20%;
 }
@@ -64,6 +68,17 @@ h5 {
 
 .button-div {
   height: 10%;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+  left:38%;
+  top: 80%;
+
 }
 
 .game-button {
@@ -103,6 +118,7 @@ h5 {
   height: 200px;
   width: 200px;
   margin: 20px;
+  cursor: pointer;
 }
 
 .flex-row {
@@ -117,4 +133,8 @@ h5 {
 
 .hidden-space {
   display: none;
+}
+
+.border {
+  border: yellow dashed;
 }
