@@ -51,16 +51,9 @@ function updateHumanSelection() {
 };
 
 function showHumanSelection() {
-  // var humanIcon = document.createElement('DIV');
-  // humanIcon.classList.add('position-offset');
-  // humanIcon.innerText = `${game.human.token}`;
-  // event.target.parentElement.appendChild(humanIcon);
-  // console.log(event.target.parentElement)
-  // var humanIcons = document.getElementsByTagName('h6');
-  // console.log(humanIcons)
   var selectedIcon = document.getElementsByClassName(`human-token ${game.human.selection}-js`);
   selectedIcon[0].innerText = `${game.human.token}`;
-  toggle(selectedIcon[0])
+  toggle(selectedIcon[0]);
 }
 
 function toggle(element) {
