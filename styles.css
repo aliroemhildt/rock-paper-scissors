@@ -28,7 +28,7 @@ main {
 
 h1 {
   font-family: 'Bungee', cursive;
-  font-size: 64px;
+  font-size: 56px;
   color: white;
   margin: 20px 0 0 0;
 }
@@ -54,18 +54,29 @@ h6 {
   font-size: 50px;
 }
 
+span {
+  padding: 0 10px 0 10px;
+}
+
 .header {
-  height: 25%;
+  height: 24%;
 }
 
 .game-area {
-  height: 60%;
+  height: 66%;
 }
 
 .button-div {
-  height: 15%;
+  height: 10%;
   display: flex;
-  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.game-type {
+  height: 76%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .position-relative {
@@ -80,19 +91,22 @@ h6 {
 }
 
 .game-button-title {
-  margin: 20px;
-  font-size: 26px;
+  margin: 10px;
+  font-size: 24px;
   color: white;
 }
 
 .game-button {
-  margin: 20px;
-  height: 200px;
+  padding: 10px;
   width: 300px;
   background-color: #AB49DA;
   border-radius: 10px;
   border-style: none;
   cursor: pointer;
+}
+
+.classic {
+  margin: 8px 0 40px 0;
 }
 
 .game-button:hover {
@@ -107,7 +121,7 @@ h6 {
 .change-game-button,
 .reset-score-button {
   font-family: 'Bungee', cursive;
-  font-size: 30px;
+  font-size: 25px;
   margin: 10px 20px 0 20px;
   padding: 5px;
   cursor: pointer;
@@ -116,7 +130,7 @@ h6 {
   border-style: none;
   border-radius: 10px;
   width: 250px;
-  height: 60px;
+  height: 40px;
 }
 .change-game-button:hover,
 .reset-score-button:hover {
@@ -148,13 +162,26 @@ h6 {
   cursor: pointer;
 }
 
+.image-rules {
+  height: 35px;
+  width: 35px;
+  margin: 0 5px 0 5px;
+
+}
+
+.single-rule {
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+
 .description {
-  font-size: 24px;
+  font-size: 22px;
   color: white;
-  margin-top: 25px;
+  margin-top: 20px;
   text-align: center;
   width: 60%;
-  padding: 10px;
+  padding: 5px;
   background-color: #CD82F0;
   border: 5px solid #AB49DA;
   border-radius: 10px;

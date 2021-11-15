@@ -19,21 +19,60 @@
       <h1>Rock, Paper, Scissors</h1>
       <h2 class="description">Choose Your Game</h2>
     </section>
-    <section class="game-area game-type flex-column">
-      <button class="game-button classic-js flex-column">
+    <section class="game-type">
+      <button class="game-button classic classic-js flex-column">
         <h2 class="game-button-title">CLASSIC</h2>
-        <p class="rules">rock > scissors<br>paper > rock<br>scissors > paper</p>
+        <section class="rules flex-column">
+          <div class="single-rule">
+            <img class="image-rules" src="assets/rock.png" alt="rock">
+            <span>beats</span>
+            <img class="image-rules" src="assets/scissors.png" alt="scissors">
+          </div>
+          <div class="single-rule">
+            <img class="image-rules" src="assets/paper.png" alt="paper">
+            <span>beats</span>
+            <img class="image-rules" src="assets/rock.png" alt="rock">
+          </div>
+          <div class="single-rule">
+            <img class="image-rules" src="assets/scissors.png" alt="scissors">
+            <span>beats</span>
+            <img class="image-rules" src="assets/paper.png" alt="paper">
+          </div>
+        </section>
       </button>
       <button class="game-button difficult-js flex-column">
         <h2 class = "game-button-title">DIFFICULT</h2>
-        <section class="rules">
-          <img class="image-rules rock-js" src="assets/rock.png" alt="rock">
-
-          rock > scissors & alien<br>
-          paper > rock & rock-on<br>
-          scissors > paper & alien<br>
-          alien > paper & rock-on<br>
-          rock-on > scissors & rock
+        <section class="rules flex-column">
+          <div class="single-rule">
+            <img class="image-rules" src="assets/rock.png" alt="rock">
+            <span>beats</span>
+            <img class="image-rules" src="assets/scissors.png" alt="scissors">
+            <img class="image-rules" src="assets/alien.png" alt="alien">
+          </div>
+          <div class="single-rule">
+            <img class="image-rules" src="assets/paper.png" alt="paper">
+            <span>beats</span>
+            <img class="image-rules" src="assets/rock.png" alt="rock">
+            <img class="image-rules" src="assets/rock-on.png" alt="rock-on">
+          </div>
+          <div class="single-rule">
+            <img class="image-rules" src="assets/scissors.png" alt="scissors">
+            <span>beats</span>
+            <img class="image-rules" src="assets/paper.png" alt="paper">
+            <img class="image-rules" src="assets/alien.png" alt="alien">
+          </div>
+          <div class="single-rule">
+            <img class="image-rules" src="assets/alien.png" alt="alien">
+            <span>beats</span>
+            <img class="image-rules" src="assets/paper.png" alt="paper">
+            <img class="image-rules" src="assets/rock-on.png" alt="rock-on">
+          </div>
+          <div class="single-rule">
+            <img class="image-rules" src="assets/rock-on.png" alt="rock-on">
+            <span>beats</span>
+            <img class="image-rules" src="assets/scissors.png" alt="scissors">
+            <img class="image-rules" src="assets/rock.png" alt="rock">
+          </div>
         </section>
       </button>
     </section>
@@ -63,11 +102,11 @@
         </div>
       </div>
     </section>
-    <div class="button-div">
-      <button class="change-game-button hidden-view">
+    <div class="button-div hidden-space">
+      <button class="change-game-button">
         Change Game
       </button>
-      <button class="reset-score-button hidden-view">
+      <button class="reset-score-button">
         Reset Score
       </button>
     </div>
