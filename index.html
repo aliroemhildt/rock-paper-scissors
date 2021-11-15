@@ -17,16 +17,16 @@
   <main>
     <section class="header flex-column">
       <h1>Rock, Paper, Scissors</h1>
-      <h2>Choose your game!</h2>
+      <h2 class="description-js">Choose your game!</h2>
     </section>
-    <section class="game-area hidden-space flex-column">
-      <button class="game-button">
+    <section class="game-area game-type flex-column">
+      <button class="game-button classic-js flex-column">
         <h2>CLASSIC</h2>
-        <p>rock > scissors<br>paper > rock<br>scissors > paper</p>
+        <p class="rules">rock > scissors<br>paper > rock<br>scissors > paper</p>
       </button>
-      <button class="game-button">
+      <button class="game-button difficult-js flex-column">
         <h2>DIFFICULT</h2>
-        <p>
+        <p class="rules">
           rock > scissors & alien<br>
           paper > rock & rock-on<br>
           scissors > paper & alien<br>
@@ -35,29 +35,29 @@
         </p>
       </button>
     </section>
-    <section class="game-area flex-column">
-      <div class="flex-row">
+    <section class="game-area game-icons flex-column hidden-space">
+      <div class="flex-row game-icons-classic">
         <div class="flex-column position-relative">
-          <img class="image rock-js" src="assets/cave.png" alt="rock">
-          <h6 class="human-token hidden-view position-absolute rock-js"><h6>
+          <img class="image rock-js" src="assets/rock.png" alt="rock">
+          <h6 class="human-token position-absolute rock-js"><h6>
         </div>
         <div class="flex-column position-relative">
-          <img class="image paper-js" src="assets/lines-paper.png" alt="paper">
-          <h6 class="human-token hidden-view position-absolute paper-js"><h6>
+          <img class="image paper-js" src="assets/paper.png" alt="paper">
+          <h6 class="human-token position-absolute paper-js"><h6>
         </div>
         <div class="flex-column position-relative">
-          <img class="image scissors-js" src="assets/lines-scissors.png" alt="scissors">
-          <h6 class="human-token hidden-view position-absolute scissors-js"><h6>
+          <img class="image scissors-js" src="assets/scissors.png" alt="scissors">
+          <h6 class="human-token position-absolute scissors-js"><h6>
         </div>
       </div>
-      <div class="flex-row">
+      <div class="flex-row game-icons-difficult">
         <div class="flex-column position-relative">
-          <img class="image alien-js" src="assets/lines-alien.png" alt="alien">
-          <h6 class="human-token hidden-view position-absolute alien-js"><h6>
+          <img class="image alien-js" src="assets/alien.png" alt="alien">
+          <h6 class="human-token position-absolute alien-js"><h6>
         </div>
         <div class="flex-column position-relative">
-          <img class="image rock-on-js" src="assets/rock-hand.png" alt="rock-on">
-          <h6 class="human-token hidden-view position-absolute rock-on-js"><h6>
+          <img class="image rock-on-js" src="assets/rock-on.png" alt="rock-on">
+          <h6 class="human-token position-absolute rock-on-js"><h6>
         </div>
       </div>
     </section>
