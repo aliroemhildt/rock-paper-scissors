@@ -16,7 +16,7 @@ class Game {
 
   chooseWinnerClassic(player1, player2) {
     if (player1.selection === player2.selection) {
-      this.winner = 'Tie';
+      this.winner = 'tie';
     } else if (
       (player1.selection === 'rock' && player2.selection === 'scissors') ||
       (player1.selection === 'paper' && player2.selection === 'rock') ||
