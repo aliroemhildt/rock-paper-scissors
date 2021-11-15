@@ -22,5 +22,3 @@ class Player {
     return choices[randomSelection];
   };
 };
-
-// module.exports = Player;

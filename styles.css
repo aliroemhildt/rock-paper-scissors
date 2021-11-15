@@ -13,7 +13,7 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
-  overflow: hidden;
+  /* overflow: hidden; */
   height: 100%;
 }
 
@@ -59,11 +59,13 @@ h6 {
 }
 
 .game-area {
-  height: 65%;
+  height: 60%;
 }
 
 .button-div {
-  height: 10%;
+  height: 15%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .position-relative {
@@ -102,10 +104,11 @@ h6 {
   font-size: 18px;
 }
 
-.change-game-button {
+.change-game-button,
+.reset-score-button {
   font-family: 'Bungee', cursive;
   font-size: 30px;
-  margin-top: 10px;
+  margin: 10px 20px 0 20px;
   padding: 5px;
   cursor: pointer;
   background-color: white;
@@ -113,8 +116,10 @@ h6 {
   border-style: none;
   border-radius: 10px;
   width: 250px;
+  height: 60px;
 }
-.change-game-button:hover {
+.change-game-button:hover,
+.reset-score-button:hover {
   opacity: 0.7;
 }
 
