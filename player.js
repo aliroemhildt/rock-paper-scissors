@@ -13,8 +13,8 @@ class Player {
 
   retrieveWinsFromStorage() {
     var retrievedWins = localStorage.getItem(`${this.name}-wins`);
-    unstringifiedWins = JSON.parse(retrievedWins);
-    this.wins = unstringifiedWins;
+    var unstringifiedWins = JSON.parse(retrievedWins);
+    return unstringifiedWins;
   };
 
   takeTurn(choices) {

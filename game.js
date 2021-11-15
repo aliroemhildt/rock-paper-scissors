@@ -12,6 +12,8 @@ class Game {
     this.human.saveWinsToStorage();
     this.computer.saveWinsToStorage();
     this.winner='';
+    this.human.selection = '';
+    this.computer.selection = '';
 };
 
   playRound(choices, choice) {
