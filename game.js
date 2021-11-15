@@ -9,8 +9,10 @@ class Game {
   };
 
   resetGame() {
-    this.human.saveWinsToStorage();
-    this.computer.saveWinsToStorage();
+    console.log(this.human.wins)
+    console.log(this.computer.wins)
+    // this.human.saveWinsToStorage();
+    // this.computer.saveWinsToStorage();
     this.winner='';
     this.human.selection = '';
     this.computer.selection = '';
@@ -21,43 +23,43 @@ class Game {
     this.computer.selection = this.computer.takeTurn(choices);
   };
 
-  chooseWinnerClassic(player1, player2) {
-    if (player1.selection === player2.selection) {
+  chooseWinnerClassic() {
+    if (this.human.selection === this.computer.selection) {
       this.winner = 'tie';
     } else if (
-      (player1.selection === 'rock' && player2.selection === 'scissors') ||
-      (player1.selection === 'paper' && player2.selection === 'rock') ||
-      (player1.selection === 'scissors' && player2.selection === 'paper')) {
-        this.winner = player1.name;
-        player1.wins++;
+      (this.human.selection === 'rock' && this.computer.selection === 'scissors') ||
+      (this.human.selection === 'paper' && this.computer.selection === 'rock') ||
+      (this.human.selection === 'scissors' && this.computer.selection === 'paper')) {
+        this.winner = this.human.name;
+        this.human.wins++;
     } else if (
-      (player1.selection === 'rock' && player2.selection === 'paper') ||
-      (player1.selection === 'paper' && player2.selection === 'scissors') ||
-      (player1.selection === 'scissors' && player2.selection === 'rock')) {
-        this.winner = player2.name;
-        player2.wins++;
+      (this.human.selection === 'rock' && this.computer.selection === 'paper') ||
+      (this.human.selection === 'paper' && this.computer.selection === 'scissors') ||
+      (this.human.selection === 'scissors' && this.computer.selection === 'rock')) {
+        this.winner = this.computer.name;
+        this.computer.wins++;
     };
   };
 
-  chooseWinnerDifficult(player1, player2) {
-    if (player1.selection === player2.selection) {
+  chooseWinnerDifficult() {
+    if (this.human.selection === this.computer.selection) {
       this.winner = 'tie';
     } else if (
-      (player1.selection === 'rock' && (player2.selection === 'scissors' || player2.selection === 'alien')) ||
-      (player1.selection === 'paper' && (player2.selection === 'rock-on' || player2.selection === 'rock')) ||
-      (player1.selection === 'scissors' && (player2.selection === 'paper' || player2.selection === 'alien')) ||
-      (player1.selection === 'alien' && (player2.selection === 'paper' || player2.selection === 'rock-on')) ||
-      (player1.selection === 'rock-on' && (player2.selection === 'rock' || player2.selection === 'scissors'))) {
-        this.winner = player1.name;
-        player1.wins++;
+      (this.human.selection === 'rock' && (this.computer.selection === 'scissors' || this.computer.selection === 'alien')) ||
+      (this.human.selection === 'paper' && (this.computer.selection === 'rock-on' || this.computer.selection === 'rock')) ||
+      (this.human.selection === 'scissors' && (this.computer.selection === 'paper' || this.computer.selection === 'alien')) ||
+      (this.human.selection === 'alien' && (this.computer.selection === 'paper' || this.computer.selection === 'rock-on')) ||
+      (this.human.selection === 'rock-on' && (this.computer.selection === 'rock' || this.computer.selection === 'scissors'))) {
+        this.winner = this.human.name;
+        this.human.wins++;
     } else if (
-      (player1.selection === 'rock' && (player2.selection === 'paper' || player2.selection === 'rock-on')) ||
-      (player1.selection === 'paper' && (player2.selection === 'alien' || player2.selection === 'scissors')) ||
-      (player1.selection === 'scissors' && (player2.selection === 'rock' || player2.selection === 'rock-on')) ||
-      (player1.selection === 'alien' && (player2.selection === 'rock' || player2.selection === 'scissors')) ||
-      (player1.selection === 'rock-on' && (player2.selection === 'paper' || player2.selection === 'alien'))) {
-        this.winner = player2.name;
-        player2.wins++;
+      (this.human.selection === 'rock' && (this.computer.selection === 'paper' || this.computer.selection === 'rock-on')) ||
+      (this.human.selection === 'paper' && (this.computer.selection === 'alien' || this.computer.selection === 'scissors')) ||
+      (this.human.selection === 'scissors' && (this.computer.selection === 'rock' || this.computer.selection === 'rock-on')) ||
+      (this.human.selection === 'alien' && (this.computer.selection === 'rock' || this.computer.selection === 'scissors')) ||
+      (this.human.selection === 'rock-on' && (this.computer.selection === 'paper' || this.computer.selection === 'alien'))) {
+        this.winner = this.computer.name;
+        this.computer.wins++;
     };
   };
 };

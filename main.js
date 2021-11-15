@@ -1,30 +1,35 @@
 
-var rock = document.querySelector('.rock-js');
-var paper = document.querySelector('.paper-js');
-var scissors = document.querySelector('.scissors-js');
-var alien = document.querySelector('.alien-js');
-var rockOn = document.querySelector('.rock-on-js');
-
-var gameIconsView = document.querySelector('.game-icons');
+// var rock = document.querySelector('.rock-js');
+// var paper = document.querySelector('.paper-js');
+// var scissors = document.querySelector('.scissors-js');
+// var alien = document.querySelector('.alien-js');
+// var rockOn = document.querySelector('.rock-on-js');
+// var gameTypeView = document.querySelector('.game-type');
+// var gameIconsView = document.querySelector('.game-icons');
 var gameIconsClassic = document.querySelector('.game-icons-classic');
 var gameIconsDifficult = document.querySelector('.game-icons-difficult');
 var classicButton = document.querySelector('.classic-js');
 var difficultButton = document.querySelector('.difficult-js');
-var pageDescription = document.querySelector('.description-js');
+// var pageDescription = document.querySelector('.description-js');
 var body = document.querySelector('body');
 
 var human = new Player('Human', '🙂');
 var computer = new Player('Computer', '🤖');
 var game = new Game(human, computer);
 
-rock.addEventListener('click', play);
-paper.addEventListener('click', play);
-scissors.addEventListener('click', play);
-alien.addEventListener('click', play);
-rockOn.addEventListener('click', play);
+// rock.addEventListener('click', play);
+// paper.addEventListener('click', play);
+// scissors.addEventListener('click', play);
+// alien.addEventListener('click', play);
+// rockOn.addEventListener('click', play);
 classicButton.addEventListener('click', showGameView);
 difficultButton.addEventListener('click', showGameView);
-window.addEventListener('load', displayPlayerInfo);
+window.addEventListener('load', loadHomePage);
+
+function loadHomePage() {
+  resetEventListeners();
+  displayPlayerInfo();
+};
 
 function play() {
   makeSelections();
@@ -37,7 +42,6 @@ function play() {
 };
 
 function makeSelections() {
-  resetEventListeners();
   var choice = '';
   if (event.target.classList.contains('rock-js')) {
     choice = 'rock';
@@ -70,7 +74,6 @@ function resetEventListeners() {
 function showHumanSelection() {
   var selectedIcon = document.getElementsByClassName(`human-token ${game.human.selection}-js`);
   selectedIcon[0].innerText = `${game.human.token}`;
-  console.log('hi')
 };
 
 function hideHumanSelection() {
@@ -84,8 +87,8 @@ function determineWinner() {
   } else if (game.type.name === 'difficult') {
     game.chooseWinnerDifficult(game.human, game.computer);
   };
-  // game.human.saveWinsToStorage();
-  // game.computer.saveWinsToStorage();
+  game.human.saveWinsToStorage();
+  game.computer.saveWinsToStorage();
 };
 
 function showWinnerView() {
@@ -125,6 +128,7 @@ function resetIcons() {
 };
 
 function displayWinner() {
+  var pageDescription = document.querySelector('.description-js');
   if (game.winner === 'tie') {
     pageDescription.innerText = 'It\'s a Draw';
   } else {
@@ -159,6 +163,7 @@ function updatePlayer2Info() {
 
 function showGameView() {
   var gameTypeView = document.querySelector('.game-type');
+  var gameIconsView = document.querySelector('.game-icons');
   assignGameType();
   addHiddenSpace(gameTypeView);
   removeHiddenSpace(gameIconsView);
