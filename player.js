@@ -8,18 +8,18 @@ class Player {
 
   saveWinsToStorage() {
     var stringifiedWins = JSON.stringify(this.wins)
-    localStorage.setItem('human-wins', stringifiedWins);
+    localStorage.setItem(`${this.name}-wins`, stringifiedWins);
   };
 
   retrieveWinsFromStorage() {
-    var retrievedWins = localStorage.getItem('human-wins');
+    var retrievedWins = localStorage.getItem(`${this.name}-wins`);
     unstringifiedWins = JSON.parse(retrievedWins);
     this.wins = unstringifiedWins;
   };
 
   takeTurn(choices) {
     var randomSelection = Math.floor(Math.random() * choices.length);
-    this.selection = choices[randomSelection];
+    return choices[randomSelection];
   };
 };
 

@@ -8,7 +8,12 @@ class Game {
     this.type = gameType;
   };
 
-  // can look into using conditions array instead ???
+  resetGame() {
+    this.human.saveWinsToStorage();
+    this.computer.saveWinsToStorage();
+    this.winner='';
+};
+
   playRound(choices, choice) {
     this.human.selection = choice;
     this.computer.selection = this.computer.takeTurn(choices);

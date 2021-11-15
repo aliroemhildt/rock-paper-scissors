@@ -30,23 +30,24 @@ var gameIconsDifficult = document.querySelector('.game-icons-difficult');
 var classicButton = document.querySelector('.classic-js');
 var difficultButton = document.querySelector('.difficult-js');
 var pageDescription = document.querySelector('.description-js');
+var body = document.querySelector('body');
 
-rock.addEventListener('click', chooseIcon);
-paper.addEventListener('click', chooseIcon);
-scissors.addEventListener('click', chooseIcon);
-alien.addEventListener('click', chooseIcon);
-rockOn.addEventListener('click', chooseIcon);
+rock.addEventListener('click', play);
+paper.addEventListener('click', play);
+scissors.addEventListener('click', play);
+alien.addEventListener('click', play);
+rockOn.addEventListener('click', play);
 classicButton.addEventListener('click', showGameView);
 difficultButton.addEventListener('click', showGameView);
 window.addEventListener('load', displayPlayerInfo);
 
-function chooseIcon() {
-  updateHumanSelection();
+function play() {
+  makeSelections();
   showHumanSelection();
-  game.computer.takeTurn(game.type.choices);
-  var body = document.querySelector('body');
   body.classList.add('no-click');
-  setTimeout(showWinnerView, 2000);
+  determineWinner();
+  setTimeout(showWinnerView, 1500);
+  setTimeout(game.resetGame, 1501);
 };
 
 function displayWinner() {
@@ -55,7 +56,7 @@ function displayWinner() {
   } else {
     pageDescription.innerText =`${game.winner} Wins!`;
   };
-}
+};
 
 function determineWinner() {
   if (game.type.name === 'classic') {
@@ -63,32 +64,32 @@ function determineWinner() {
   } else if (game.type.name === 'difficult') {
     game.chooseWinnerDifficult(game.human, game.computer);
   };
-}
+};
 
 function showWinnerView() {
-  determineWinner();
   addHiddenView(gameIconsDifficult);
   hideHumanSelection();
   displayWinner();
-  console.log(game.human.selection, game.computer.selection)
   gameIconsClassic.innerHTML = `
     <img class="image" src="assets/${game.human.selection}.png" alt="${game.human.selection}">
     <img class="image" src="assets/${game.computer.selection}.png" alt="${game.computer.selection}">
   `;
-}
+};
 
-function updateHumanSelection() {
+function makeSelections() {
+  var choice = '';
   if (event.target.classList.contains('rock-js')) {
-    game.human.selection = 'rock';
+    choice = 'rock';
   } else if (event.target.classList.contains('paper-js')) {
-    game.human.selection = 'paper';
+    choice = 'paper';
   } else if (event.target.classList.contains('scissors-js')) {
-    game.human.selection = 'scissors';
+    choice = 'scissors';
   } else if (event.target.classList.contains('alien-js')) {
-    game.human.selection = 'alien';
+    choice = 'alien';
   } else if (event.target.classList.contains('rock-on-js')) {
-    game.human.selection = 'rock-on';
+    choice = 'rock-on';
   };
+  game.playRound(game.type.choices, choice)
 };
 
 function showHumanSelection() {
