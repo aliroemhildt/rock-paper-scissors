@@ -1,9 +1,4 @@
-
-// var rock = document.querySelector('.rock-js');
-// var paper = document.querySelector('.paper-js');
-// var scissors = document.querySelector('.scissors-js');
-// var alien = document.querySelector('.alien-js');
-// var rockOn = document.querySelector('.rock-on-js');
+// QUERY SELECTORS
 var gameTypeView = document.querySelector('.game-type');
 var gameIconsView = document.querySelector('.game-icons');
 var gameIconsClassic = document.querySelector('.game-icons-classic');
@@ -11,37 +6,75 @@ var gameIconsDifficult = document.querySelector('.game-icons-difficult');
 var classicButton = document.querySelector('.classic-js');
 var difficultButton = document.querySelector('.difficult-js');
 var changeGameButton = document.querySelector('.change-game-button');
-// var pageDescription = document.querySelector('.description-js');
 var body = document.querySelector('body');
 var description = document.querySelector('.description');
-var resetScoreButton = document.querySelector('.reset-score-button')
-var buttons = document.querySelector('.button-div')
+var resetScoreButton = document.querySelector('.reset-score-button');
+var buttons = document.querySelector('.button-div');
 
+// GLOBAL VARIABLES
 var human = new Player('Human', '🙂');
 var computer = new Player('Computer', '🤖');
 var game = new Game(human, computer);
 
-// rock.addEventListener('click', play);
-// paper.addEventListener('click', play);
-// scissors.addEventListener('click', play);
-// alien.addEventListener('click', play);
-// rockOn.addEventListener('click', play);
+// EVENT LISTENERS
 classicButton.addEventListener('click', showGameView);
 difficultButton.addEventListener('click', showGameView);
-changeGameButton.addEventListener('click', changeGame);
+changeGameButton.addEventListener('click', showHomeView);
 resetScoreButton.addEventListener('click', resetScore);
 window.addEventListener('load', loadHomePage);
 
+// FUNCTIONS
 function loadHomePage() {
-  resetEventListeners();
+  resetIconEventListeners();
   displayPlayerInfo();
+};
+
+function resetIconEventListeners() {
+  var rock = document.querySelector('.rock-js');
+  var paper = document.querySelector('.paper-js');
+  var scissors = document.querySelector('.scissors-js');
+  var alien = document.querySelector('.alien-js');
+  var rockOn = document.querySelector('.rock-on-js');
+  rock.addEventListener('click', play);
+  paper.addEventListener('click', play);
+  scissors.addEventListener('click', play);
+  alien.addEventListener('click', play);
+  rockOn.addEventListener('click', play);
+};
+
+function displayPlayerInfo() {
+    updatePlayerInfo(game.human.name);
+    updatePlayerInfo(game.computer.name);
+};
+
+function updatePlayerInfo(playerName) {
+  player = setPlayerInfo(playerName);
+  var playerToken = document.querySelector(`.${player.playerKey}-token-js`);
+  var playerName = document.querySelector(`.${player.playerKey}-name-js`);
+  var playerWins = document.querySelector(`.${player.playerKey}-wins-js`);
+  game[player.nameKey].wins = game[player.nameKey].retrieveWinsFromStorage() || 0;
+  playerToken.innerText = game[player.nameKey].token;
+  playerName.innerText = game[player.nameKey].name;
+  playerWins.innerText = `Wins: ${game[player.nameKey].wins}`;
+};
+
+function setPlayerInfo(playerName) {
+  var player = {playerKey: '', nameKey: ''};
+  if (playerName === 'Human') {
+    player.playerKey = 'player1';
+    player.nameKey = 'human';
+  } else if (playerName === 'Computer') {
+    player.playerKey = 'player2';
+    player.nameKey = 'computer';
+  };
+  return player;
 };
 
 function play() {
   makeSelections();
   showHumanSelection();
-  body.classList.add('no-click');
   determineWinner();
+  body.classList.add('no-click');
   setTimeout(showWinnerView, 1500);
   setTimeout(game.resetGame, 1501);
   setTimeout(resetView, 3000);
@@ -60,33 +93,13 @@ function makeSelections() {
   } else if (event.target.classList.contains('rock-on-js')) {
     choice = 'rock-on';
   };
-  game.playRound(game.type.choices, choice)
-};
-
-function resetEventListeners() {
-  var rock = document.querySelector('.rock-js');
-  var paper = document.querySelector('.paper-js');
-  var scissors = document.querySelector('.scissors-js');
-  var alien = document.querySelector('.alien-js');
-  var rockOn = document.querySelector('.rock-on-js');
-  rock.addEventListener('click', play);
-  paper.addEventListener('click', play);
-  scissors.addEventListener('click', play);
-  alien.addEventListener('click', play);
-  rockOn.addEventListener('click', play);
+  game.playRound(choice, game.type.choices);
 };
 
 function showHumanSelection() {
   var selectedIcon = document.getElementsByClassName(`human-token ${game.human.selection}-js`);
   selectedIcon[0].innerText = `${game.human.token}`;
 };
-
-function resetHumanSelection() {
-    var tokens = document.getElementsByClassName('human-token');
-    for (var i = 0; i < tokens.length; i++) {
-      tokens[i].innerText = '';
-    }
-  };
 
 function determineWinner() {
   if (game.type.name === 'classic') {
@@ -109,31 +122,11 @@ function showWinnerView() {
   `;
 };
 
-function resetView() {
-  resetIcons();
-  resetHumanSelection();
-  resetEventListeners();
-  body.classList.remove('no-click');
-  description.innerText = 'Choose Your Fighter';
-  if (game.type.name === 'difficult') {
-    removeHiddenView(gameIconsDifficult);
+function resetHumanSelection() {
+  var tokens = document.getElementsByClassName('human-token');
+  for (var i = 0; i < tokens.length; i++) {
+    tokens[i].innerText = '';
   };
-};
-
-function resetIcons() {
-  gameIconsClassic.innerHTML =
-    `<div class="flex-column position-relative">
-      <img class="image rock-js" src="assets/rock.png" alt="rock">
-      <h6 class="human-token position-absolute rock-js"><h6>
-    </div>
-    <div class="flex-column position-relative">
-      <img class="image paper-js" src="assets/paper.png" alt="paper">
-      <h6 class="human-token position-absolute paper-js"><h6>
-    </div>
-    <div class="flex-column position-relative">
-      <img class="image scissors-js" src="assets/scissors.png" alt="scissors">
-      <h6 class="human-token position-absolute scissors-js"><h6>
-    </div>`;
 };
 
 function displayWinner() {
@@ -144,40 +137,41 @@ function displayWinner() {
   };
 };
 
-function displayPlayerInfo() {
-    updatePlayer1Info();
-    updatePlayer2Info();
+function resetView() {
+  resetClassicIcons();
+  resetHumanSelection();
+  resetIconEventListeners();
+  body.classList.remove('no-click');
+  description.innerText = 'Choose Your Fighter';
+  if (game.type.name === 'difficult') {
+    removeHiddenView(gameIconsDifficult);
+  };
 };
 
-function updatePlayer1Info() {
-  player1Token = document.querySelector(".player1-token-js");
-  player1Name = document.querySelector(".player1-name-js");
-  player1Wins = document.querySelector(".player1-wins-js");
-  game.human.wins = game.human.retrieveWinsFromStorage() || 0;
-  player1Token.innerText = game.human.token;
-  player1Name.innerText = game.human.name;
-  player1Wins.innerText = `Wins: ${game.human.wins}`;
-};
-
-function updatePlayer2Info() {
-  player2Token = document.querySelector('.player2-token-js');
-  player2Name = document.querySelector('.player2-name-js');
-  player2Wins = document.querySelector('.player2-wins-js');
-  game.computer.wins = game.computer.retrieveWinsFromStorage() || 0;
-  player2Token.innerText = game.computer.token;
-  player2Name.innerText = game.computer.name;
-  player2Wins.innerText = `Wins: ${game.computer.wins}`;
+function resetClassicIcons() {
+  gameIconsClassic.innerHTML = `
+    <div class="flex-column position-relative">
+      <img class="image rock-js" src="assets/rock.png" alt="rock">
+      <h6 class="human-token position-absolute rock-js"><h6>
+    </div>
+    <div class="flex-column position-relative">
+      <img class="image paper-js" src="assets/paper.png" alt="paper">
+      <h6 class="human-token position-absolute paper-js"><h6>
+    </div>
+    <div class="flex-column position-relative">
+      <img class="image scissors-js" src="assets/scissors.png" alt="scissors">
+      <h6 class="human-token position-absolute scissors-js"><h6>
+    </div>
+  `;
 };
 
 function showGameView() {
-  resetEventListeners();
+  resetIconEventListeners();
   assignGameType();
   addHiddenSpace(gameTypeView);
   removeHiddenSpace(gameIconsView);
   removeHiddenSpace(buttons);
-  // removeHiddenView(changeGameButton);
-  // removeHiddenView(resetScoreButton)
-  description.innerText = 'Choose Your Fighter'
+  description.innerText = 'Choose Your Fighter';
   if (game.type.name === 'classic') {
     addHiddenView(gameIconsDifficult);
   } else if (game.type.name === 'difficult') {
@@ -199,18 +193,19 @@ function assignGameType() {
   };
 };
 
-function changeGame() {
-  resetIcons();
-  resetHumanSelection();
+function showHomeView() {
+  resetClassicIcons();
   addHiddenSpace(gameIconsView);
-  removeHiddenSpace(gameTypeView)
   addHiddenSpace(buttons);
-  // addHiddenView(changeGameButton);
-  // addHiddenView(resetScoreButton);
+  removeHiddenSpace(gameTypeView);
+  description.innerText = 'Choose Your Game';
 };
 
 function resetScore() {
-  localStorage.clear();
+  game.human.wins = 0;
+  game.computer.wins = 0;
+  game.human.saveWinsToStorage();
+  game.computer.saveWinsToStorage();
   displayPlayerInfo();
 }
 
