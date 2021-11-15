@@ -81,15 +81,11 @@ function showHumanSelection() {
 };
 
 function resetHumanSelection() {
-  // var selectedIcon = document.getElementsByClassName(`human-token ${game.human.selection}-js`);
-  // selectedIcon[0].innerText = '';
-
-  gameIcons = ['rock', 'paper', 'scissors', 'alien', 'rock-on'];
-  for (var i = 0; i < gameIcons.length; i++) {
-    var icon = document.querySelector('h6', `.${gameIcons[i]}-js`);
-    icon.innerText = '';
+    var tokens = document.getElementsByClassName('human-token');
+    for (var i = 0; i < tokens.length; i++) {
+      tokens[i].innerText = '';
+    }
   };
-};
 
 function determineWinner() {
   if (game.type.name === 'classic') {
@@ -137,7 +133,6 @@ function resetIcons() {
       <img class="image scissors-js" src="assets/scissors.png" alt="scissors">
       <h6 class="human-token position-absolute scissors-js"><h6>
     </div>`;
-  };
 };
 
 function displayWinner() {
@@ -174,6 +169,7 @@ function updatePlayer2Info() {
 };
 
 function showGameView() {
+  resetEventListeners();
   assignGameType();
   addHiddenSpace(gameTypeView);
   removeHiddenSpace(gameIconsView);
