@@ -17,8 +17,12 @@ class Player {
     return unstringifiedWins;
   };
 
-  takeTurn(choices) {
-    var randomSelection = Math.floor(Math.random() * choices.length);
-    return choices[randomSelection];
+  takeTurn(choice, choices) {
+    if (this.name === 'Human') {
+      this.selection = choice;
+    } else if (this.name === 'Computer') {
+      var randomSelection = Math.floor(Math.random() * choices.length);
+      this.selection = choices[randomSelection];
+    };
   };
 };

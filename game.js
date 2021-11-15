@@ -6,9 +6,9 @@ class Game {
     this.type = gameType;
   };
 
-  playRound(choices, choice) {
-    this.human.selection = choice;
-    this.computer.selection = this.computer.takeTurn(choices);
+  playRound(choice, choices) {
+    this.human.takeTurn(choice, choices)
+    this.computer.takeTurn(choice, choices);
   };
 
   chooseWinnerClassic() {
