@@ -15,6 +15,7 @@ var changeGameButton = document.querySelector('.change-game-button');
 var body = document.querySelector('body');
 var description = document.querySelector('.description');
 var resetScoreButton = document.querySelector('.reset-score-button')
+var buttons = document.querySelector('.button-div')
 
 var human = new Player('Human', '🙂');
 var computer = new Player('Computer', '🤖');
@@ -173,8 +174,9 @@ function showGameView() {
   assignGameType();
   addHiddenSpace(gameTypeView);
   removeHiddenSpace(gameIconsView);
-  removeHiddenView(changeGameButton);
-  removeHiddenView(resetScoreButton)
+  removeHiddenSpace(buttons);
+  // removeHiddenView(changeGameButton);
+  // removeHiddenView(resetScoreButton)
   description.innerText = 'Choose Your Fighter'
   if (game.type.name === 'classic') {
     addHiddenView(gameIconsDifficult);
@@ -202,8 +204,9 @@ function changeGame() {
   resetHumanSelection();
   addHiddenSpace(gameIconsView);
   removeHiddenSpace(gameTypeView)
-  addHiddenView(changeGameButton);
-  addHiddenView(resetScoreButton);
+  addHiddenSpace(buttons);
+  // addHiddenView(changeGameButton);
+  // addHiddenView(resetScoreButton);
 };
 
 function resetScore() {
