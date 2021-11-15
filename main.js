@@ -104,11 +104,11 @@ function showWinnerView() {
 
 function resetView() {
   resetIcons();
+  resetEventListeners();
   body.classList.remove('no-click');
   if (game.type.name === 'difficult') {
     removeHiddenView(gameIconsDifficult);
   };
-  resetEventListeners();
 };
 
 function resetIcons() {
