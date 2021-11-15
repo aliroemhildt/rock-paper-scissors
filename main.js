@@ -10,6 +10,7 @@ var gameIconsClassic = document.querySelector('.game-icons-classic');
 var gameIconsDifficult = document.querySelector('.game-icons-difficult');
 var classicButton = document.querySelector('.classic-js');
 var difficultButton = document.querySelector('.difficult-js');
+var changeGameButton = document.querySelector('.change-game-button');
 // var pageDescription = document.querySelector('.description-js');
 var body = document.querySelector('body');
 
@@ -55,7 +56,6 @@ function makeSelections() {
     choice = 'rock-on';
   };
   game.playRound(game.type.choices, choice)
-  console.log(game.human.selection, game.computer.selection)
 };
 
 function resetEventListeners() {
@@ -167,6 +167,7 @@ function showGameView() {
   assignGameType();
   addHiddenSpace(gameTypeView);
   removeHiddenSpace(gameIconsView);
+  removeHiddenView(changeGameButton);
   if (game.type.name === 'classic') {
     addHiddenView(gameIconsDifficult);
   } else if (game.type.name === 'difficult') {

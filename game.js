@@ -9,10 +9,6 @@ class Game {
   };
 
   resetGame() {
-    console.log(this.human.wins)
-    console.log(this.computer.wins)
-    // this.human.saveWinsToStorage();
-    // this.computer.saveWinsToStorage();
     this.winner='';
     this.human.selection = '';
     this.computer.selection = '';

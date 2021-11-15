@@ -33,20 +33,15 @@ h1 {
   margin: 20px 0 0 0;
 }
 
-h2 {
-  color: white;
-  font-size: 28px;
-  margin: 20px;
-}
-
 h3 {
   margin: 40px 20px 20px 10px;
   font-size: 50px;
 }
 
 h4 {
-  color: white;
-  font-size: 30px;
+  font-family: 'Bungee', cursive;
+  color: #AB49DA;
+  font-size: 36px;
 }
 
 h5 {
@@ -60,11 +55,11 @@ h6 {
 }
 
 .header {
-  height: 20%;
+  height: 25%;
 }
 
 .game-area {
-  height: 70%;
+  height: 65%;
 }
 
 .button-div {
@@ -82,6 +77,12 @@ h6 {
 
 }
 
+.game-button-title {
+  margin: 20px;
+  font-size: 26px;
+  color: white;
+}
+
 .game-button {
   margin: 20px;
   height: 200px;
@@ -97,16 +98,24 @@ h6 {
 }
 
 .rules {
-  /* margin: 10px; */
   color: white;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .change-game-button {
   font-family: 'Bungee', cursive;
   font-size: 30px;
   margin-top: 10px;
+  padding: 5px;
   cursor: pointer;
+  background-color: white;
+  color: #CD82F0;
+  border-style: none;
+  border-radius: 10px;
+  width: 250px;
+}
+.change-game-button:hover {
+  opacity: 0.7;
 }
 
 .side-section {
@@ -128,10 +137,22 @@ h6 {
 }
 
 .image {
-  height: 200px;
-  width: 200px;
+  height: 175px;
+  width: 175px;
   margin: 20px;
   cursor: pointer;
+}
+
+.description {
+  font-size: 24px;
+  color: white;
+  margin-top: 25px;
+  text-align: center;
+  width: 60%;
+  padding: 10px;
+  background-color: #CD82F0;
+  border: 5px solid #AB49DA;
+  border-radius: 10px;
 }
 
 .flex-row {
