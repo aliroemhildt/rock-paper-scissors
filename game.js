@@ -5,12 +5,7 @@ class Game {
     this.human = player1;
     this.computer = player2;
     this.winner = '';
-    this.gameType = gameType;
-    // gameTypes that will be used:
-    // {type: 'classic',
-    // choices = ['rock', 'paper', 'scissors']}
-    // {type: 'difficult',
-    // choices = ['rock', 'paper', 'scissors', 'rock-on', 'alien']}
+    this.type = gameType;
   };
 
   // can look into using conditions array instead ???
@@ -27,17 +22,19 @@ class Game {
       (player1.selection === 'paper' && player2.selection === 'rock') ||
       (player1.selection === 'scissors' && player2.selection === 'paper')) {
         this.winner = player1.name;
+        player1.wins++;
     } else if (
       (player1.selection === 'rock' && player2.selection === 'paper') ||
       (player1.selection === 'paper' && player2.selection === 'scissors') ||
       (player1.selection === 'scissors' && player2.selection === 'rock')) {
         this.winner = player2.name;
+        player2.wins++;
     };
   };
 
   chooseWinnerDifficult(player1, player2) {
     if (player1.selection === player2.selection) {
-      this.winner = 'Tie';
+      this.winner = 'tie';
     } else if (
       (player1.selection === 'rock' && (player2.selection === 'scissors' || player2.selection === 'alien')) ||
       (player1.selection === 'paper' && (player2.selection === 'rock-on' || player2.selection === 'rock')) ||
@@ -45,6 +42,7 @@ class Game {
       (player1.selection === 'alien' && (player2.selection === 'paper' || player2.selection === 'rock-on')) ||
       (player1.selection === 'rock-on' && (player2.selection === 'rock' || player2.selection === 'scissors'))) {
         this.winner = player1.name;
+        player1.wins++;
     } else if (
       (player1.selection === 'rock' && (player2.selection === 'paper' || player2.selection === 'rock-on')) ||
       (player1.selection === 'paper' && (player2.selection === 'alien' || player2.selection === 'scissors')) ||
@@ -52,6 +50,7 @@ class Game {
       (player1.selection === 'alien' && (player2.selection === 'rock' || player2.selection === 'scissors')) ||
       (player1.selection === 'rock-on' && (player2.selection === 'paper' || player2.selection === 'alien'))) {
         this.winner = player2.name;
+        player2.wins++;
     };
   };
 };

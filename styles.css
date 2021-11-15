@@ -151,3 +151,7 @@ h6 {
 .border {
   border: yellow dashed;
 }
+
+.no-click {
+  pointer-events: none;
+}

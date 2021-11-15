@@ -19,7 +19,7 @@ class Player {
 
   takeTurn(choices) {
     var randomSelection = Math.floor(Math.random() * choices.length);
-    return choices[randomSelection];
+    this.selection = choices[randomSelection];
   };
 };
 
