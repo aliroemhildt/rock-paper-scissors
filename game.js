@@ -1,5 +1,3 @@
-// var Player = require('./player.js');
-
 class Game {
   constructor(player1, player2, gameType) {
     this.human = player1;
@@ -7,16 +5,6 @@ class Game {
     this.winner = '';
     this.type = gameType;
   };
-
-  resetGame() {
-    console.log(this.human.wins)
-    console.log(this.computer.wins)
-    // this.human.saveWinsToStorage();
-    // this.computer.saveWinsToStorage();
-    this.winner='';
-    this.human.selection = '';
-    this.computer.selection = '';
-};
 
   playRound(choices, choice) {
     this.human.selection = choice;
@@ -62,6 +50,10 @@ class Game {
         this.computer.wins++;
     };
   };
-};
 
-// module.exports = Game;
+  resetGame() {
+    this.winner='';
+    this.human.selection = '';
+    this.computer.selection = '';
+  };
+};

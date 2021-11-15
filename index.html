@@ -17,22 +17,24 @@
   <main>
     <section class="header flex-column">
       <h1>Rock, Paper, Scissors</h1>
-      <h2 class="description-js">Choose your game!</h2>
+      <h2 class="description">Choose Your Game</h2>
     </section>
     <section class="game-area game-type flex-column">
       <button class="game-button classic-js flex-column">
-        <h2>CLASSIC</h2>
+        <h2 class="game-button-title">CLASSIC</h2>
         <p class="rules">rock > scissors<br>paper > rock<br>scissors > paper</p>
       </button>
       <button class="game-button difficult-js flex-column">
-        <h2>DIFFICULT</h2>
-        <p class="rules">
+        <h2 class = "game-button-title">DIFFICULT</h2>
+        <section class="rules">
+          <img class="image-rules rock-js" src="assets/rock.png" alt="rock">
+
           rock > scissors & alien<br>
           paper > rock & rock-on<br>
           scissors > paper & alien<br>
           alien > paper & rock-on<br>
           rock-on > scissors & rock
-        </p>
+        </section>
       </button>
     </section>
     <section class="game-area game-icons flex-column hidden-space">
@@ -62,8 +64,11 @@
       </div>
     </section>
     <div class="button-div">
-      <button class="change-game-button">
+      <button class="change-game-button hidden-view">
         Change Game
+      </button>
+      <button class="reset-score-button hidden-view">
+        Reset Score
       </button>
     </div>
   </main>

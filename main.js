@@ -4,14 +4,17 @@
 // var scissors = document.querySelector('.scissors-js');
 // var alien = document.querySelector('.alien-js');
 // var rockOn = document.querySelector('.rock-on-js');
-// var gameTypeView = document.querySelector('.game-type');
-// var gameIconsView = document.querySelector('.game-icons');
+var gameTypeView = document.querySelector('.game-type');
+var gameIconsView = document.querySelector('.game-icons');
 var gameIconsClassic = document.querySelector('.game-icons-classic');
 var gameIconsDifficult = document.querySelector('.game-icons-difficult');
 var classicButton = document.querySelector('.classic-js');
 var difficultButton = document.querySelector('.difficult-js');
+var changeGameButton = document.querySelector('.change-game-button');
 // var pageDescription = document.querySelector('.description-js');
 var body = document.querySelector('body');
+var description = document.querySelector('.description');
+var resetScoreButton = document.querySelector('.reset-score-button')
 
 var human = new Player('Human', '🙂');
 var computer = new Player('Computer', '🤖');
@@ -24,6 +27,8 @@ var game = new Game(human, computer);
 // rockOn.addEventListener('click', play);
 classicButton.addEventListener('click', showGameView);
 difficultButton.addEventListener('click', showGameView);
+changeGameButton.addEventListener('click', changeGame);
+resetScoreButton.addEventListener('click', resetScore);
 window.addEventListener('load', loadHomePage);
 
 function loadHomePage() {
@@ -55,7 +60,6 @@ function makeSelections() {
     choice = 'rock-on';
   };
   game.playRound(game.type.choices, choice)
-  console.log(game.human.selection, game.computer.selection)
 };
 
 function resetEventListeners() {
@@ -76,10 +80,12 @@ function showHumanSelection() {
   selectedIcon[0].innerText = `${game.human.token}`;
 };
 
-function hideHumanSelection() {
-  var selectedIcon = document.getElementsByClassName(`human-token ${game.human.selection}-js`);
-  selectedIcon[0].innerText = '';
-};
+function resetHumanSelection() {
+    var tokens = document.getElementsByClassName('human-token');
+    for (var i = 0; i < tokens.length; i++) {
+      tokens[i].innerText = '';
+    }
+  };
 
 function determineWinner() {
   if (game.type.name === 'classic') {
@@ -93,7 +99,7 @@ function determineWinner() {
 
 function showWinnerView() {
   addHiddenView(gameIconsDifficult);
-  hideHumanSelection();
+  resetHumanSelection();
   displayWinner();
   displayPlayerInfo();
   gameIconsClassic.innerHTML = `
@@ -104,11 +110,13 @@ function showWinnerView() {
 
 function resetView() {
   resetIcons();
+  resetHumanSelection();
+  resetEventListeners();
   body.classList.remove('no-click');
+  description.innerText = 'Choose Your Fighter';
   if (game.type.name === 'difficult') {
     removeHiddenView(gameIconsDifficult);
   };
-  resetEventListeners();
 };
 
 function resetIcons() {
@@ -128,11 +136,10 @@ function resetIcons() {
 };
 
 function displayWinner() {
-  var pageDescription = document.querySelector('.description-js');
   if (game.winner === 'tie') {
-    pageDescription.innerText = 'It\'s a Draw';
+    description.innerText = 'It\'s a Draw';
   } else {
-    pageDescription.innerText =`${game.winner} Wins!`;
+    description.innerText =`${game.winner} Wins!`;
   };
 };
 
@@ -162,11 +169,13 @@ function updatePlayer2Info() {
 };
 
 function showGameView() {
-  var gameTypeView = document.querySelector('.game-type');
-  var gameIconsView = document.querySelector('.game-icons');
+  resetEventListeners();
   assignGameType();
   addHiddenSpace(gameTypeView);
   removeHiddenSpace(gameIconsView);
+  removeHiddenView(changeGameButton);
+  removeHiddenView(resetScoreButton)
+  description.innerText = 'Choose Your Fighter'
   if (game.type.name === 'classic') {
     addHiddenView(gameIconsDifficult);
   } else if (game.type.name === 'difficult') {
@@ -187,6 +196,20 @@ function assignGameType() {
     };
   };
 };
+
+function changeGame() {
+  resetIcons();
+  resetHumanSelection();
+  addHiddenSpace(gameIconsView);
+  removeHiddenSpace(gameTypeView)
+  addHiddenView(changeGameButton);
+  addHiddenView(resetScoreButton);
+};
+
+function resetScore() {
+  localStorage.clear();
+  displayPlayerInfo();
+}
 
 function addHiddenSpace(element) {
   element.classList.add('hidden-space');
