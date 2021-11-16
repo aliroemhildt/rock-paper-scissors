@@ -1,5 +1,10 @@
 /* font-family: 'Bungee', cursive;
-font-family: 'Roboto', sans-serif; */
+font-family: 'Roboto', sans-serif;
+very-dark-purple: #8039A3
+dark-purple: #AB49DA
+medium-purple: #C669EF
+light-purpl: #CD82F0
+*/
 
 * {
   margin: 0;
@@ -13,21 +18,17 @@ html {
 
 body {
   font-family: 'Roboto', sans-serif;
-  /* overflow: hidden; */
+  overflow: hidden;
   height: 100%;
 }
 
 main {
   width: 60%;
   min-height: 99%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: #C669EF;
 }
 
 h1 {
-  font-family: 'Bungee', cursive;
   font-size: 56px;
   color: white;
   margin: 20px 0 0 0;
@@ -39,7 +40,6 @@ h3 {
 }
 
 h4 {
-  font-family: 'Bungee', cursive;
   color: #AB49DA;
   font-size: 36px;
 }
@@ -52,42 +52,50 @@ h5 {
 
 h6 {
   font-size: 50px;
+  position: absolute;
+  left:38%;
+  top: 80%;
 }
 
 span {
   padding: 0 10px 0 10px;
 }
 
+.bungee-font {
+  font-family: 'Bungee', cursive;
+}
+
 .header {
   height: 24%;
+  width: 100%;
 }
 
 .game-area {
   height: 66%;
+  width: 100%;
 }
 
-.button-div {
+.change-reset-buttons {
   height: 10%;
+  width: 100%;
   display: flex;
-  align-items: flex-start;
+  justify-content: center;
 }
 
-.game-type {
+.game-type-view {
   height: 76%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  width: 100%;
+}
+
+.side-section {
+  width: 20%;
+  height: 100%;
+  background-color: #CD82F0;
+  font-weight: 50px;
 }
 
 .position-relative {
   position: relative;
-}
-
-.position-absolute {
-  position: absolute;
-  left:38%;
-  top: 80%;
-
 }
 
 .game-button-title {
@@ -120,7 +128,6 @@ span {
 
 .change-game-button,
 .reset-score-button {
-  font-family: 'Bungee', cursive;
   font-size: 25px;
   margin: 10px 20px 0 20px;
   padding: 5px;
@@ -132,27 +139,15 @@ span {
   width: 250px;
   height: 40px;
 }
+
 .change-game-button:hover,
 .reset-score-button:hover {
   opacity: 0.7;
 }
 
-.side-section {
-  width: 20%;
-  height: 100%;
-  background-color: #CD82F0;
-  font-weight: 50px;
-}
-
-.flex-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.game-area {
-  justify-content: center;
+.disable-button {
+  pointer-events: none;
+  opacity: 0.4;
 }
 
 .image {
@@ -185,6 +180,13 @@ span {
   background-color: #CD82F0;
   border: 5px solid #AB49DA;
   border-radius: 10px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .flex-row {

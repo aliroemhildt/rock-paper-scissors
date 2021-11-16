@@ -11,103 +11,105 @@
   <body class="flex-row">
     <section class="side-section flex-column">
       <h3 class="player1-token-js">Token</h3>
-      <h4 class="player1-name-js">Name</h4>
+      <h4 class="player1-name-js bungee-font">Name</h4>
       <h5 class="player1-wins-js">Wins</h5>
     </section>
-    <main>
+    <main class="flex-column">
       <section class="header flex-column">
-        <h1>Rock, Paper, Scissors</h1>
+        <h1 class="bungee-font">Rock, Paper, Scissors</h1>
         <h2 class="description">Choose Your Game</h2>
       </section>
-      <section class="game-button classic classic-js flex-column">
-        <h2 class="game-button-title">CLASSIC</h2>
-        <section class="rules flex-column">
-          <div class="single-rule">
-            <img class="image-rules" src="assets/rock.png" alt="rock">
-            <span>beats</span>
-            <img class="image-rules" src="assets/scissors.png" alt="scissors">
-          </div>
-          <div class="single-rule">
-            <img class="image-rules" src="assets/paper.png" alt="paper">
-            <span>beats</span>
-            <img class="image-rules" src="assets/rock.png" alt="rock">
-          </div>
-          <div class="single-rule">
-            <img class="image-rules" src="assets/scissors.png" alt="scissors">
-            <span>beats</span>
-            <img class="image-rules" src="assets/paper.png" alt="paper">
-          </div>
+      <section class="game-type-view flex-column">
+        <section class="game-button classic classic-js flex-column">
+          <h2 class="game-button-title">CLASSIC</h2>
+          <section class="rules flex-column">
+            <div class="single-rule">
+              <img class="image-rules" src="assets/rock.png" alt="rock">
+              <span>beats</span>
+              <img class="image-rules" src="assets/scissors.png" alt="scissors">
+            </div>
+            <div class="single-rule">
+              <img class="image-rules" src="assets/paper.png" alt="paper">
+              <span>beats</span>
+              <img class="image-rules" src="assets/rock.png" alt="rock">
+            </div>
+            <div class="single-rule">
+              <img class="image-rules" src="assets/scissors.png" alt="scissors">
+              <span>beats</span>
+              <img class="image-rules" src="assets/paper.png" alt="paper">
+            </div>
+          </section>
+        </section>
+        <section class="game-button difficult-js flex-column">
+          <h2 class = "game-button-title">DIFFICULT</h2>
+          <section class="rules flex-column">
+            <div class="single-rule">
+              <img class="image-rules" src="assets/rock.png" alt="rock">
+              <span>beats</span>
+              <img class="image-rules" src="assets/scissors.png" alt="scissors">
+              <img class="image-rules" src="assets/alien.png" alt="alien">
+            </div>
+            <div class="single-rule">
+              <img class="image-rules" src="assets/paper.png" alt="paper">
+              <span>beats</span>
+              <img class="image-rules" src="assets/rock.png" alt="rock">
+              <img class="image-rules" src="assets/rock-on.png" alt="rock-on">
+            </div>
+            <div class="single-rule">
+              <img class="image-rules" src="assets/scissors.png" alt="scissors">
+              <span>beats</span>
+              <img class="image-rules" src="assets/paper.png" alt="paper">
+              <img class="image-rules" src="assets/alien.png" alt="alien">
+            </div>
+            <div class="single-rule">
+              <img class="image-rules" src="assets/alien.png" alt="alien">
+              <span>beats</span>
+              <img class="image-rules" src="assets/paper.png" alt="paper">
+              <img class="image-rules" src="assets/rock-on.png" alt="rock-on">
+            </div>
+            <div class="single-rule">
+              <img class="image-rules" src="assets/rock-on.png" alt="rock-on">
+              <span>beats</span>
+              <img class="image-rules" src="assets/scissors.png" alt="scissors">
+              <img class="image-rules" src="assets/rock.png" alt="rock">
+            </div>
+          </section>
         </section>
       </section>
-      <section class="game-button difficult-js flex-column">
-        <h2 class = "game-button-title">DIFFICULT</h2>
-        <section class="rules flex-column">
-          <div class="single-rule">
-            <img class="image-rules" src="assets/rock.png" alt="rock">
-            <span>beats</span>
-            <img class="image-rules" src="assets/scissors.png" alt="scissors">
-            <img class="image-rules" src="assets/alien.png" alt="alien">
-          </div>
-          <div class="single-rule">
-            <img class="image-rules" src="assets/paper.png" alt="paper">
-            <span>beats</span>
-            <img class="image-rules" src="assets/rock.png" alt="rock">
-            <img class="image-rules" src="assets/rock-on.png" alt="rock-on">
-          </div>
-          <div class="single-rule">
-            <img class="image-rules" src="assets/scissors.png" alt="scissors">
-            <span>beats</span>
-            <img class="image-rules" src="assets/paper.png" alt="paper">
-            <img class="image-rules" src="assets/alien.png" alt="alien">
-          </div>
-          <div class="single-rule">
-            <img class="image-rules" src="assets/alien.png" alt="alien">
-            <span>beats</span>
-            <img class="image-rules" src="assets/paper.png" alt="paper">
-            <img class="image-rules" src="assets/rock-on.png" alt="rock-on">
-          </div>
-          <div class="single-rule">
-            <img class="image-rules" src="assets/rock-on.png" alt="rock-on">
-            <span>beats</span>
-            <img class="image-rules" src="assets/scissors.png" alt="scissors">
-            <img class="image-rules" src="assets/rock.png" alt="rock">
-          </div>
-        </section>
-      </section>
-      <section class="game-area game-icons flex-column hidden-space">
-        <div class="flex-row game-icons-classic">
+      <section class="game-area game-icons-js flex-column hidden-space">
+        <div class="flex-row game-icons-classic-js">
           <div class="flex-column position-relative">
             <img class="image rock-js" src="assets/rock.png" alt="rock">
-            <h6 class="human-token position-absolute rock-js"><h6>
+            <h6 class="human-token rock-js"><h6>
           </div>
           <div class="flex-column position-relative">
             <img class="image paper-js" src="assets/paper.png" alt="paper">
-            <h6 class="human-token position-absolute paper-js"><h6>
+            <h6 class="human-token paper-js"><h6>
           </div>
           <div class="flex-column position-relative">
             <img class="image scissors-js" src="assets/scissors.png" alt="scissors">
-            <h6 class="human-token position-absolute scissors-js"><h6>
+            <h6 class="human-token scissors-js"><h6>
           </div>
         </div>
-        <div class="flex-row game-icons-difficult">
+        <div class="flex-row game-icons-difficult-js">
           <div class="flex-column position-relative">
             <img class="image alien-js" src="assets/alien.png" alt="alien">
-            <h6 class="human-token position-absolute alien-js"><h6>
+            <h6 class="human-token alien-js"><h6>
           </div>
           <div class="flex-column position-relative">
             <img class="image rock-on-js" src="assets/rock-on.png" alt="rock-on">
-            <h6 class="human-token position-absolute rock-on-js"><h6>
+            <h6 class="human-token rock-on-js"><h6>
           </div>
         </div>
       </section>
-      <div class="button-div hidden-space">
-        <button class="change-game-button">Change Game</button>
-        <button class="reset-score-button">Reset Score</button>
+      <div class="change-reset-buttons hidden-space">
+        <button class="change-game-button bungee-font">Change Game</button>
+        <button class="reset-score-button bungee-font">Reset Score</button>
       </div>
     </main>
     <section class = "side-section flex-column">
       <h3 class="player2-token-js">Token</h3>
-      <h4 class="player2-name-js">Name</h4>
+      <h4 class="player2-name-js bungee-font">Name</h4>
       <h5 class="player2-wins-js">Wins</h5>
     </section>
     <script type="text/javascript" src="player.js"></script>
