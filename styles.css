@@ -75,7 +75,7 @@ span {
   width: 100%;
 }
 
-.change-reset-buttons {
+.buttons-container {
   height: 10%;
   width: 100%;
   display: flex;
@@ -104,6 +104,14 @@ span {
   color: white;
 }
 
+.classic {
+  margin: 8px 0 40px 0;
+}
+.rules {
+  color: white;
+  font-size: 18px;
+}
+
 .game-button {
   padding: 10px;
   width: 300px;
@@ -111,19 +119,12 @@ span {
   border-radius: 10px;
   border-style: none;
   cursor: pointer;
-}
-
-.classic {
-  margin: 8px 0 40px 0;
+  transition: transform 0.3s ease;
 }
 
 .game-button:hover {
-  background-color: #8039A3 ;
-}
-
-.rules {
-  color: white;
-  font-size: 18px;
+  background-color: #8039A3;
+  transform: translate(-10px, -10px);
 }
 
 .change-game-button,
@@ -155,6 +156,11 @@ span {
   width: 175px;
   margin: 20px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.image:hover {
+  transform: translate(-10px, -10px);
 }
 
 .image-rules {
