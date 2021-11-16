@@ -1,11 +1,3 @@
-/* font-family: 'Bungee', cursive;
-font-family: 'Roboto', sans-serif;
-very-dark-purple: #8039A3
-dark-purple: #AB49DA
-medium-purple: #C669EF
-light-purpl: #CD82F0
-*/
-
 * {
   margin: 0;
   padding: 0;
@@ -25,12 +17,12 @@ body {
 main {
   width: 60%;
   min-height: 99%;
-  background-color: #C669EF;
+  background-color: #EEF4E0;
 }
 
 h1 {
   font-size: 56px;
-  color: white;
+  color: #024D4F;
   margin: 20px 0 0 0;
 }
 
@@ -40,12 +32,12 @@ h3 {
 }
 
 h4 {
-  color: #AB49DA;
+  color: #024D4F;
   font-size: 36px;
 }
 
 h5 {
-  color: white;
+  color: #024D4F;
   font-size: 26px;
   margin-top: 30px;
 }
@@ -58,6 +50,7 @@ h6 {
 }
 
 span {
+  color: #024D4F;
   padding: 0 10px 0 10px;
 }
 
@@ -73,9 +66,10 @@ span {
 .game-area {
   height: 66%;
   width: 100%;
+  justify-content: center;
 }
 
-.change-reset-buttons {
+.buttons-container {
   height: 10%;
   width: 100%;
   display: flex;
@@ -90,7 +84,7 @@ span {
 .side-section {
   width: 20%;
   height: 100%;
-  background-color: #CD82F0;
+  background-color: #5ADC94;
   font-weight: 50px;
 }
 
@@ -101,29 +95,30 @@ span {
 .game-button-title {
   margin: 10px;
   font-size: 24px;
-  color: white;
-}
-
-.game-button {
-  padding: 10px;
-  width: 300px;
-  background-color: #AB49DA;
-  border-radius: 10px;
-  border-style: none;
-  cursor: pointer;
+  color: #024D4F;
 }
 
 .classic {
   margin: 8px 0 40px 0;
 }
-
-.game-button:hover {
-  background-color: #8039A3 ;
-}
-
 .rules {
   color: white;
   font-size: 18px;
+}
+
+.game-button {
+  padding: 10px;
+  width: 300px;
+  background-color: #5ADC94;
+  border-radius: 10px;
+  border-style: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.game-button:hover {
+  background-color: #8DE4AF;
+  transform: translate(-10px, -10px);
 }
 
 .change-game-button,
@@ -132,8 +127,8 @@ span {
   margin: 10px 20px 0 20px;
   padding: 5px;
   cursor: pointer;
-  background-color: white;
-  color: #CD82F0;
+  background-color: #024D4F;
+  color: #5ADC94;
   border-style: none;
   border-radius: 10px;
   width: 250px;
@@ -155,6 +150,11 @@ span {
   width: 175px;
   margin: 20px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.image:hover {
+  transform: translate(-10px, -10px);
 }
 
 .image-rules {
@@ -172,13 +172,13 @@ span {
 
 .description {
   font-size: 22px;
-  color: white;
+  color: #024D4F;
   margin-top: 20px;
   text-align: center;
-  width: 60%;
+  width: 82%;
   padding: 5px;
-  background-color: #CD82F0;
-  border: 5px solid #AB49DA;
+  background-color: #EEF4E0;
+  border: 5px solid #5ADC94;
   border-radius: 10px;
 }
 
@@ -187,6 +187,12 @@ span {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+}
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .flex-row {

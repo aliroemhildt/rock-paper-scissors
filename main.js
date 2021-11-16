@@ -9,7 +9,7 @@ var changeGameButton = document.querySelector('.change-game-button');
 var body = document.querySelector('body');
 var description = document.querySelector('.description');
 var resetScoreButton = document.querySelector('.reset-score-button');
-var buttons = document.querySelector('.change-reset-buttons');
+var buttons = document.querySelector('.buttons-container');
 
 // GLOBAL VARIABLES
 var human = new Player('Human', '🙂');
