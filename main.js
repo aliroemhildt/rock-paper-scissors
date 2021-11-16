@@ -1,15 +1,15 @@
 // QUERY SELECTORS
-var gameTypeView = document.querySelector('.game-type');
-var gameIconsView = document.querySelector('.game-icons');
-var gameIconsClassic = document.querySelector('.game-icons-classic');
-var gameIconsDifficult = document.querySelector('.game-icons-difficult');
+var gameTypeView = document.querySelector('.game-type-view');
+var gameIconsView = document.querySelector('.game-icons-js');
+var gameIconsClassic = document.querySelector('.game-icons-classic-js');
+var gameIconsDifficult = document.querySelector('.game-icons-difficult-js');
 var classicButton = document.querySelector('.classic-js');
 var difficultButton = document.querySelector('.difficult-js');
 var changeGameButton = document.querySelector('.change-game-button');
 var body = document.querySelector('body');
 var description = document.querySelector('.description');
 var resetScoreButton = document.querySelector('.reset-score-button');
-var buttons = document.querySelector('.button-div');
+var buttons = document.querySelector('.change-reset-buttons');
 
 // GLOBAL VARIABLES
 var human = new Player('Human', '🙂');
@@ -45,6 +45,7 @@ function resetIconEventListeners() {
 function displayPlayerInfo() {
     updatePlayerInfo(game.human.name);
     updatePlayerInfo(game.computer.name);
+    checkResetButton();
 };
 
 function updatePlayerInfo(playerName) {
@@ -68,6 +69,14 @@ function setPlayerInfo(playerName) {
     player.nameKey = 'computer';
   };
   return player;
+};
+
+function checkResetButton() {
+  if (game.human.wins === 0 && game.computer.wins === 0) {
+    resetScoreButton.classList.add('disable-button');
+  } else {
+    resetScoreButton.classList.remove('disable-button');
+  };
 };
 
 function play() {
