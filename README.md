@@ -16,15 +16,15 @@ On the landing page, a user will be shown the rules for both the classic version
 
 **Change Game**
 
-![Change Game](https://media.giphy.com/media/Lk94LgyouBiLlTMSK8/giphy.gif)
+![Change Game](https://media.giphy.com/media/dSi6WS9iQTRytl0FqR/giphy.gif)
 
 **Difficult Game View**
 
-[Difficult Game View](https://media.giphy.com/media/Lk94LgyouBiLlTMSK8/giphy.gif)
+![Difficult Game View](https://media.giphy.com/media/Lk94LgyouBiLlTMSK8/giphy.gif)
 
 **Reset Score**
 
-[Reset Scores](https://media.giphy.com/media/EPGAN2eaXrevunlnyR/giphy.gif)
+![Reset Scores](https://media.giphy.com/media/EPGAN2eaXrevunlnyR/giphy.gif)
 
 ## Setup
 
