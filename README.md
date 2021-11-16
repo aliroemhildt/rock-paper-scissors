@@ -16,10 +16,6 @@ On the landing page, a user will be shown the rules for both the classic version
 
 ## Setup
 
-This app can be accessed at the link below:
-
-[Deployed Site]()
-
 This app can alse be accessed through the following steps:
 
 - clone this repo to your local machine
