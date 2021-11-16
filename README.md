@@ -16,7 +16,7 @@ On the landing page, a user will be shown the rules for both the classic version
 
 **Change Game**
 
-![Change Game](https://media.giphy.com/media/dSi6WS9iQTRytl0FqR/giphy.gif)
+![Change Game](https://media.giphy.com/media/fdauc5KqhlQHoL551v/giphy.gif)
 
 **Difficult Game View**
 
