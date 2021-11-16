@@ -8,11 +8,23 @@ On the landing page, a user will be shown the rules for both the classic version
 
 **Landing Page**
 
+![Landing Page](https://media.giphy.com/media/qATyQbfNBiO9zDjLuJ/giphy.gif)
+
 **Classic Game View**
+
+![Classic Game View](https://media.giphy.com/media/uumTg8MNciWOSsXxJ3/giphy.gif)
+
+**Change Game**
+
+![Change Game](https://media.giphy.com/media/Lk94LgyouBiLlTMSK8/giphy.gif)
 
 **Difficult Game View**
 
+[Difficult Game View](https://media.giphy.com/media/Lk94LgyouBiLlTMSK8/giphy.gif)
+
 **Reset Score**
+
+[Reset Scores](https://media.giphy.com/media/EPGAN2eaXrevunlnyR/giphy.gif)
 
 ## Setup
 
