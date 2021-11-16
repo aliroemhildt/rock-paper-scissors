@@ -216,7 +216,7 @@ function resetScore() {
   game.human.saveWinsToStorage();
   game.computer.saveWinsToStorage();
   displayPlayerInfo();
-}
+};
 
 function addHiddenSpace(element) {
   element.classList.add('hidden-space');
