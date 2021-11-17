@@ -44,7 +44,7 @@ In futre iterations, I would like to incorporate:
 
 - additional animations
 - responsive design for varying screen sizes
-- further explore how to make this app more accessible
+- further exploration into how to make this app more accessible
 
 ## Project Contributers
 
