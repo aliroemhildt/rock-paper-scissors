@@ -46,6 +46,6 @@ In futre iterations, I would like to incorporate:
 - responsive design for varying screen sizes
 - further exploration into how to make this app more accessible
 
-## Project Contributers
+## Contributers
 
 Functionality and design by [Ali Roemhildt](https://github.com/aliroemhildt)
