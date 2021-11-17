@@ -161,22 +161,22 @@ function resetClassicIcons() {
   gameIconsClassic.innerHTML = `
     <div class="flex-column position-relative">
       <img class="image rock-js" src="assets/rock.png" alt="rock">
-      <h6 class="human-token position-absolute rock-js"><h6>
+      <div class="human-token position-absolute rock-js"></div>
     </div>
     <div class="flex-column position-relative">
       <img class="image paper-js" src="assets/paper.png" alt="paper">
-      <h6 class="human-token position-absolute paper-js"><h6>
+      <div class="human-token position-absolute paper-js"></div>
     </div>
     <div class="flex-column position-relative">
       <img class="image scissors-js" src="assets/scissors.png" alt="scissors">
-      <h6 class="human-token position-absolute scissors-js"><h6>
+      <div class="human-token position-absolute scissors-js"></div>
     </div>
   `;
 };
 
 function showGameView() {
   resetIconEventListeners();
-  assignGameType();
+  game.assignType(getGameType());
   addHiddenSpace(gameTypeView);
   removeHiddenSpace(gameIconsView);
   removeHiddenSpace(buttons);
@@ -188,18 +188,13 @@ function showGameView() {
   };
 };
 
-function assignGameType() {
+function getGameType() {
   if (event.currentTarget.classList.contains('classic-js')) {
-    game.type = {
-      name: 'classic',
-      choices: ['rock', 'paper', 'scissors']
-    };
-  } else if (event.currentTarget.classList.contains('difficult-js')) {
-    game.type = {
-      name: 'difficult',
-      choices: ['rock', 'paper', 'scissors', 'rock-on', 'alien']
-    };
+    var gameType = 'classic';
+  } else {
+    var gameType = 'difficult';
   };
+  return gameType;
 };
 
 function showHomeView() {
