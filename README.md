@@ -28,12 +28,9 @@ On the landing page, a user will be shown the rules for both the classic version
 
 ## Setup
 
-This app can be accessed through the following steps:
-
-- clone this repo to your local machine
-- `cd` into the project
-- run `open index.html` in your terminal to view the app in your browser
-- open the project in a text editor to view the code 
+1. clone this repo to your machine
+2. `cd` into the repo in your command line
+3. run `open index.html` in your command line to view the app in your browser
 
 ## Languages
 
@@ -41,6 +38,14 @@ This app can be accessed through the following steps:
 - HTML
 - CSS
 
-## Contributors
+## Future State
 
-[Ali Roemhildt](https://github.com/aliroemhildt)
+In futre iterations, I would like to incorporate: 
+
+- additional animations
+- responsive design for varying screen sizes
+- further explore how to make this app more accessible
+
+## Project Contributers
+
+Functionality and design by [Ali Roemhildt](https://github.com/aliroemhildt)
