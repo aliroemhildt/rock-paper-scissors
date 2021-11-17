@@ -176,7 +176,7 @@ function resetClassicIcons() {
 
 function showGameView() {
   resetIconEventListeners();
-  assignGameType();
+  game.assignType(getGameType());
   addHiddenSpace(gameTypeView);
   removeHiddenSpace(gameIconsView);
   removeHiddenSpace(buttons);
@@ -188,18 +188,13 @@ function showGameView() {
   };
 };
 
-function assignGameType() {
+function getGameType() {
   if (event.currentTarget.classList.contains('classic-js')) {
-    game.type = {
-      name: 'classic',
-      choices: ['rock', 'paper', 'scissors']
-    };
-  } else if (event.currentTarget.classList.contains('difficult-js')) {
-    game.type = {
-      name: 'difficult',
-      choices: ['rock', 'paper', 'scissors', 'rock-on', 'alien']
-    };
+    var gameType = 'classic';
+  } else {
+    var gameType = 'difficult';
   };
+  return gameType;
 };
 
 function showHomeView() {

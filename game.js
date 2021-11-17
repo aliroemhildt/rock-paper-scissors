@@ -12,42 +12,52 @@ class Game {
   };
 
   chooseWinnerClassic() {
-    if (this.human.selection === this.computer.selection) {
+    var human = this.human.selection;
+    var computer = this.computer.selection;
+    if (human === computer) {
       this.winner = 'tie';
     } else if (
-      (this.human.selection === 'rock' && this.computer.selection === 'scissors') ||
-      (this.human.selection === 'paper' && this.computer.selection === 'rock') ||
-      (this.human.selection === 'scissors' && this.computer.selection === 'paper')) {
+      (human === 'rock' && computer === 'scissors') ||
+      (human === 'paper' && computer === 'rock') ||
+      (human === 'scissors' && computer === 'paper')) {
         this.winner = this.human.name;
         this.human.wins++;
-    } else if (
-      (this.human.selection === 'rock' && this.computer.selection === 'paper') ||
-      (this.human.selection === 'paper' && this.computer.selection === 'scissors') ||
-      (this.human.selection === 'scissors' && this.computer.selection === 'rock')) {
+    } else {
         this.winner = this.computer.name;
         this.computer.wins++;
     };
   };
 
   chooseWinnerDifficult() {
-    if (this.human.selection === this.computer.selection) {
+    var human = this.human.selection;
+    var computer = this.computer.selection;
+    if (human === computer) {
       this.winner = 'tie';
     } else if (
-      (this.human.selection === 'rock' && (this.computer.selection === 'scissors' || this.computer.selection === 'alien')) ||
-      (this.human.selection === 'paper' && (this.computer.selection === 'rock-on' || this.computer.selection === 'rock')) ||
-      (this.human.selection === 'scissors' && (this.computer.selection === 'paper' || this.computer.selection === 'alien')) ||
-      (this.human.selection === 'alien' && (this.computer.selection === 'paper' || this.computer.selection === 'rock-on')) ||
-      (this.human.selection === 'rock-on' && (this.computer.selection === 'rock' || this.computer.selection === 'scissors'))) {
+      (human === 'rock' && (computer === 'scissors' || computer === 'alien')) ||
+      (human === 'paper' && (computer === 'rock-on' || computer === 'rock')) ||
+      (human === 'scissors' && (computer === 'paper' || computer === 'alien')) ||
+      (human === 'alien' && (computer === 'paper' || computer === 'rock-on')) ||
+      (human === 'rock-on' && (computer === 'rock' || computer === 'scissors'))) {
         this.winner = this.human.name;
         this.human.wins++;
-    } else if (
-      (this.human.selection === 'rock' && (this.computer.selection === 'paper' || this.computer.selection === 'rock-on')) ||
-      (this.human.selection === 'paper' && (this.computer.selection === 'alien' || this.computer.selection === 'scissors')) ||
-      (this.human.selection === 'scissors' && (this.computer.selection === 'rock' || this.computer.selection === 'rock-on')) ||
-      (this.human.selection === 'alien' && (this.computer.selection === 'rock' || this.computer.selection === 'scissors')) ||
-      (this.human.selection === 'rock-on' && (this.computer.selection === 'paper' || this.computer.selection === 'alien'))) {
+    } else {
         this.winner = this.computer.name;
         this.computer.wins++;
+    };
+  };
+
+  assignType(gameType) {
+    if (gameType === 'classic') {
+      this.type = {
+        name: 'classic',
+        choices: ['rock', 'paper', 'scissors']
+      };
+    } else {
+      this.type = {
+        name: 'difficult',
+        choices: ['rock', 'paper', 'scissors', 'rock-on', 'alien']
+      };
     };
   };
 
