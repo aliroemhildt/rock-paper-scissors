@@ -28,6 +28,8 @@ On the landing page, a user will be shown the rules for both the classic version
 
 ## Setup
 
+You can view the deployed site [here](https://aliroemhildt.github.io/rock-paper-scissors/), or follow the steps below to open from your own machine:
+
 1. clone this repo to your machine
 2. `cd` into the repo in your command line
 3. run `open index.html` in your command line to view the app in your browser
