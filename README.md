@@ -1,10 +1,10 @@
 # Rock-Paper-Scissors
 
-An app that allows users to play the game rock, paper, scissors against the computer. 
+An app that allows users to play the game "rock, paper, scissors" against the computer. 
 
 ## Overview
 
-On the landing page, a user will be shown the rules for both the classic version and difficult version of the game rock, paper, scissors. The difficult version includes two additional choices. Once the user selects the version they would like to play, they will be brought to a new page showing all of the choices for that version of the game. The user can make their selection by clicking on an icon. The app will then make a random choice for the computer and a new page will appear showing the winner. The scores on the sides of the screen will be updated accordingly and the game will automatically re-start. While playing, the user can click the "change game" button at the bottom of the screen to go back to the home page and select a different game and the score will remain the same on the side of the screen. The user can also click the "reset score" button on the bottom of the screen while playing to reset both scores to zero. 
+On the landing page, a user will be shown the rules for both the classic version and difficult version of the "game rock, paper, scissors". The difficult version includes two additional choices. Once the user selects the version they would like to play, they will be brought to a new page showing all of the choices for that version of the game. The user can make their selection by clicking on an icon. The app will then make a random choice for the computer and a new page will appear showing the winner. The scores on the sides of the screen will be updated accordingly and the game will automatically re-start. While playing, the user can click the "change game" button at the bottom of the screen to go back to the home page and select a different game (the score will still remain the same). The user can also click the "reset score" button on the bottom of the screen while playing to reset both scores to zero. 
 
 **Landing Page**
 
@@ -28,12 +28,11 @@ On the landing page, a user will be shown the rules for both the classic version
 
 ## Setup
 
-This app can be accessed through the following steps:
+You can view the deployed site [here](https://aliroemhildt.github.io/rock-paper-scissors/), or follow the steps below to open from your own machine:
 
-- clone this repo to your local machine
-- `cd` into the project
-- run `open index.html` in your terminal to view the app in your browser
-- open the project in a text editor to view the code 
+1. clone this repo to your machine
+2. `cd` into the repo in your command line
+3. run `open index.html` in your command line to view the app in your browser
 
 ## Languages
 
@@ -41,6 +40,14 @@ This app can be accessed through the following steps:
 - HTML
 - CSS
 
-## Contributors
+## Future State
 
-[Ali Roemhildt](https://github.com/aliroemhildt)
+In futre iterations, I would like to incorporate: 
+
+- additional animations
+- responsive design for varying screen sizes
+- further exploration into how to make this app more accessible
+
+## Contributers
+
+Functionality and design by [Ali Roemhildt](https://github.com/aliroemhildt)
