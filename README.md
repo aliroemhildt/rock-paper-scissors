@@ -1,6 +1,12 @@
 # Rock-Paper-Scissors
 
-An app that allows users to play the game "rock, paper, scissors" against the computer. 
+This application was built as a final solo project for Module 1 of Turing School of Software & Design's frontend program. This app that allows users to play the game "rock, paper, scissors" against the computer.
+
+The focus areas of this project were:
+
+- DRY JavaScript
+- Event Delegation
+- Relationship between the data model and the DOM
 
 ## Overview
 
